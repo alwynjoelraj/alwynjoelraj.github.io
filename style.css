@@ -1,229 +1,130 @@
-/* ========== General Reset & Fonts ========== */
+/* Reset & basics */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #F3F4F6;
+  color: #111827;
   line-height: 1.6;
-  color: #2C3E50; /* Main text color */
-  background-color: #ECF0F1; /* Light neutral background */
 }
 
-a {
-  text-decoration: none;
-  color: #2980B9; /* Accent blue for links */
-}
-
-a:hover {
-  color: #1F618D;
-}
-
-/* ========== Header & Navigation ========== */
+/* Header / Navigation */
 header {
-  background-color: #2C3E50; /* Dark header */
-  color: #ECF0F1;
-  padding: 1rem 0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 10;
 }
 
-nav {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
+header nav {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
 }
 
-nav h1 {
+header h1 {
   font-size: 1.8rem;
-  font-weight: bold;
+  color: #111827;
 }
 
-nav ul {
+header ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 20px;
 }
 
-nav ul li a {
-  color: #ECF0F1;
+header ul li a {
+  text-decoration: none;
+  color: #4B5563;
   font-weight: 500;
-  transition: color 0.3s;
 }
 
-nav ul li a:hover {
-  color: #2980B9;
+header ul li a:hover {
+  color: #2563EB;
 }
 
-/* ========== Hero Section ========== */
+/* Hero Section */
 .hero {
+  background-color: #F3F4F6;
   text-align: center;
-  padding: 4rem 1rem;
-  background-color: #34495E; /* Slightly lighter than header */
-  color: #ECF0F1;
+  padding: 100px 20px;
+  position: relative;
 }
 
 .hero h2 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  color: #111827;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
 }
 
 .hero p {
-  margin: 0.5rem 0;
-  font-size: 1.1rem;
+  color: #4B5563;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
 }
 
 .hero .btn {
   display: inline-block;
-  margin: 1rem 0.5rem 0;
-  padding: 0.8rem 1.5rem;
-  background-color: #2980B9;
-  color: #ECF0F1;
-  border-radius: 5px;
-  font-weight: 600;
-  transition: background-color 0.3s;
+  margin: 10px 10px;
+  padding: 12px 25px;
+  background-color: #2563EB;
+  color: #ffffff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
 }
 
 .hero .btn:hover {
-  background-color: #1F618D;
+  background-color: #1D4ED8;
 }
 
-/* ========== Sections ========== */
+/* Sections */
 section {
-  width: 90%;
   max-width: 1000px;
-  margin: 3rem auto;
-  padding: 2rem 1rem;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  margin: 0 auto;
+  padding: 60px 20px;
 }
 
 section h2 {
   font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #2C3E50;
-  border-bottom: 2px solid #2980B9;
+  color: #111827;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #E5E7EB;
   display: inline-block;
-  padding-bottom: 0.2rem;
+  padding-bottom: 5px;
 }
 
-/* ========== About & Achievements ========== */
-#about p,
-#achievements ul {
-  margin-bottom: 1rem;
-  color: #2C3E50;
+section p, section li {
+  color: #4B5563;
 }
 
-#achievements ul li {
-  margin-bottom: 0.7rem;
-  position: relative;
-  padding-left: 1.2rem;
-}
-
-#achievements ul li::before {
-  content: '✔';
-  position: absolute;
-  left: 0;
-  color: #2980B9;
-}
-
-/* ========== Experience Section ========== */
-.project {
-  margin-bottom: 2rem;
-}
-
-.project h3 {
-  font-size: 1.5rem;
-  color: #2C3E50;
-  margin-bottom: 0.3rem;
-}
-
-.project h4 {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #34495E;
-  margin-bottom: 0.3rem;
-}
-
-.project h5 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #2980B9;
-  margin-bottom: 0.5rem;
-}
-
-.project ul {
-  margin-left: 1rem;
-  list-style-type: disc;
-}
-
-.project ul li {
-  margin-bottom: 0.5rem;
-}
-
-/* ========== Skills Section ========== */
+/* Skills */
 .skills-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.7rem;
+  gap: 10px;
 }
 
 .skills-list span {
-  background-color: #2980B9;
-  color: #ECF0F1;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: background-color 0.3s;
+  background-color: #E5E7EB;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 0.95rem;
 }
 
-.skills-list span:hover {
-  background-color: #1F618D;
-}
-
-/* ========== Certifications ========== */
-#certifications ul {
-  list-style-type: square;
-  margin-left: 1rem;
-}
-
-#certifications ul li {
-  margin-bottom: 0.7rem;
-  color: #2C3E50;
-}
-
-/* ========== Contact ========== */
-#contact p {
-  margin-bottom: 0.5rem;
-}
-
-/* ========== Footer ========== */
+/* Footer */
 footer {
   text-align: center;
-  padding: 1rem 0;
-  background-color: #2C3E50;
-  color: #ECF0F1;
-  margin-top: 2rem;
-  font-size: 0.9rem;
-}
-
-/* ========== Responsive ========== */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 0.5rem;
-  }
-
-  .hero h2 {
-    font-size: 2rem;
-  }
+  padding: 25px 0;
+  background-color: #ffffff;
+  color: #4B5563;
+  border-top: 1px solid #E5E7EB;
 }
