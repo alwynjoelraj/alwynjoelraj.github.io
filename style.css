@@ -1,178 +1,183 @@
-/* ------------------ Base ------------------ */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
 
+/* Body */
 body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f3f4f6; /* light gray background */
-    color: #1f2937; /* dark gray text */
-    line-height: 1.6;
+  background: #0f172a;
+  color: #e2e8f0;
+  line-height: 1.6;
 }
 
-a {
-    text-decoration: none;
-    color: #2563EB; /* professional blue */
-}
-
-a:hover {
-    color: #1D4ED8;
-}
-
-/* ------------------ Container / Box ------------------ */
-.container {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 30px 40px;
-    background-color: #ffffff; /* white content box */
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08); /* subtle shadow */
-}
-
-/* ------------------ Header / Nav ------------------ */
+/* Header */
 header {
-    background-color: #ffffff;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  background: #020617;
+  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1000px;
-    margin: auto;
-    padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 nav h1 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #111827;
+  color: #38bdf8;
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
+  display: flex;
+  list-style: none;
 }
 
-nav li a {
-    font-weight: 500;
-    color: #1f2937;
-    transition: color 0.3s;
+nav ul li {
+  margin-left: 25px;
 }
 
-nav li a:hover {
-    color: #2563EB;
+nav a {
+  color: #e2e8f0;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-/* ------------------ Hero Section ------------------ */
+nav a:hover {
+  color: #38bdf8;
+}
+
+/* Hero Section */
 .hero {
-    text-align: center;
-    padding: 50px 20px;
+  text-align: center;
+  padding: 100px 20px;
 }
 
 .hero h2 {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #111827; /* dark gray */
-    margin-bottom: 15px;
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: #ffffff; /* Hero title in white */
 }
 
 .hero p {
-    font-size: 1.1rem;
-    color: #4b5563; /* soft gray */
-    margin: 5px 0;
+  margin: 10px 0;
+  color: #cbd5e1; /* Brighter gray for contrast */
 }
 
+/* Hero Buttons */
 .hero .btn {
-    padding: 12px 25px;
-    margin: 12px 8px;
-    background-color: #2563EB;
-    color: #ffffff;
-    border-radius: 6px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    display: inline-block;
+  display: inline-block;
+  margin: 15px 10px;
+  padding: 10px 20px;
+  background: #38bdf8; /* Bright blue button */
+  color: #ffffff;      /* White text */
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+  font-weight: bold;
 }
 
 .hero .btn:hover {
-    background-color: #1D4ED8;
-    transform: translateY(-2px);
+  background: #0ea5e9; /* Slightly darker blue on hover */
 }
 
-/* ------------------ Section Headings ------------------ */
-h2 {
-    font-size: 2rem;
-    color: #111827;
-    border-bottom: 2px solid #e5e7eb;
-    padding-bottom: 8px;
-    margin-bottom: 20px;
+/* Sections */
+section {
+  padding: 60px 40px;
+  max-width: 1000px;
+  margin: auto;
 }
 
-h3 {
-    font-size: 1.5rem;
-    color: #1f2937;
-    margin-bottom: 8px;
+section h2 {
+  margin-bottom: 20px;
+  color: #38bdf8; /* Section titles in blue */
 }
 
-h4, h5 {
-    font-size: 1.1rem;
-    color: #4b5563;
-    margin-bottom: 5px;
+section p {
+  color: #e2e8f0; /* Section paragraph text */
+  margin-bottom: 15px;
 }
 
-/* ------------------ Lists ------------------ */
+/* Cards (Experience & Projects) */
+.project {
+  background: #020617;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+}
+
+/* Lists */
 ul {
-    padding-left: 20px;
-    margin-bottom: 20px;
+  margin-top: 10px;
+  padding-left: 20px;
 }
 
 ul li {
-    margin-bottom: 8px;
+  margin-bottom: 8px;
 }
 
-/* ------------------ Skills ------------------ */
+/* Skills */
 .skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .skills-list span {
-    background-color: #e5e7eb;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    color: #1f2937;
+  background: #38bdf8;
+  color: black;
+  padding: 8px 12px;
+  margin: 6px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
 }
 
-/* ------------------ Footer ------------------ */
+/* Contact */
+#contact p {
+  margin: 8px 0;
+}
+
+/* Footer */
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #ffffff;
-    color: #6b7280;
-    border-top: 1px solid #e5e7eb;
-    margin-top: 40px;
+  text-align: center;
+  padding: 20px;
+  background: #020617;
+  margin-top: 40px;
 }
 
-/* ------------------ Responsive ------------------ */
+/* Responsive Design */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        gap: 10px;
-    }
+  nav ul {
+    flex-direction: column;
+    background: #020617;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    display: none;
+  }
 
-    .container {
-        padding: 20px;
-        margin: 20px;
-    }
+  nav ul.active {
+    display: flex;
+  }
 
-    .hero h2 {
-        font-size: 2.2rem;
-    }
+  nav ul li {
+    margin: 15px;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  section {
+    padding: 40px 20px;
+  }
 }
