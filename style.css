@@ -29,7 +29,7 @@ nav {
 }
 
 nav h1 {
-  color: #38bdf8;
+  color: #ffffff;
 }
 
 nav ul {
@@ -94,7 +94,7 @@ section {
 
 section h2 {
   margin-bottom: 20px;
-  color: #38bdf8; /* Section titles in blue */
+  color: #ffffff; /* Section titles in white */
 }
 
 section p {
@@ -132,7 +132,7 @@ ul li {
 }
 
 .skills-list span {
-  background: #38bdf8;
+  background: #ffffff;
   color: black;
   padding: 8px 12px;
   margin: 6px;
