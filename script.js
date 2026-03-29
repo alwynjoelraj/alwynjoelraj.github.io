@@ -1,29 +1,57 @@
-// ---------------- Smooth Scrolling for Nav Links ----------------
-document.querySelectorAll('nav a').forEach(link => {
+// ==========================
+// Responsive Navigation Toggle
+// ==========================
+const navToggle = document.querySelector('.nav-toggle'); // button or hamburger icon
+const navMenu = document.querySelector('nav ul');
+
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+}
+
+// ==========================
+// Smooth Scrolling for Anchor Links
+// ==========================
+const links = document.querySelectorAll('nav a[href^="#"]');
+
+links.forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
-    const targetId = this.getAttribute('href').substring(1);
-    const targetSection = document.getElementById(targetId);
-    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - 60, // adjust for sticky header
+        behavior: 'smooth'
+      });
+    }
+
+    // Close nav menu on mobile after click
+    if (navMenu.classList.contains('active')) {
+      navMenu.classList.remove('active');
+    }
   });
 });
 
-// ---------------- Fade-In Sections on Scroll ----------------
+// ==========================
+// Optional: Active Link Highlighting on Scroll
+// ==========================
 const sections = document.querySelectorAll('section');
-const options = {
-  threshold: 0.1
-};
 
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('fade-in');
-      observer.unobserve(entry.target);
+window.addEventListener('scroll', () => {
+  let scrollPos = window.scrollY + 70; // adjust for header height
+
+  sections.forEach(section => {
+    if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+      const id = section.getAttribute('id');
+      links.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${id}`) {
+          link.classList.add('active');
+        }
+      });
     }
   });
-}, options);
-
-sections.forEach(section => {
-  section.classList.add('opacity-0'); // initially hidden
-  observer.observe(section);
 });
